@@ -1,10 +1,17 @@
 import '../styles/globals.css';
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import Head from 'next/head';
 
 function MyApp ({ Component, pageProps }) {
+  const theme = extendTheme({
+    colors: {
+      brand: {
+        yellow: '#fcda68'
+      }
+    }
+  });
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <Head>
         <title>Noah Chernet</title>
         <link
@@ -24,7 +31,7 @@ function MyApp ({ Component, pageProps }) {
           sizes='180x180'
           href='/favicon/apple-touch-icon.png'
         />
-        <link rel='manifest' href='/site.webmanifest' />
+        <link rel='manifest' href='/favicon/site.webmanifest' />
         <link
           rel='mask-icon'
           href='/favicon/safari-pinned-tab.svg'
